@@ -715,41 +715,6 @@ dateInput.addEventListener("change", function () {
 
 });
 
-
-document
-.getElementById("appointmentForm")
-.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    const selectedDate = document.getElementById("date").value;
-
-    if (!selectedDate) {
-        return;
-    }
-
-    const date = new Date(
-        selectedDate + "T12:00:00"
-    );
-
-    const day = date.getDay();
-
-    if (day !== 1 && day !== 3) {
-
-        alert(
-            "Por favor selecciona un lunes o miércoles."
-        );
-
-        return;
-
-    }
-
-    document.getElementById("success").style.display = "block";
-
-    this.reset();
-
-});
-
 </script>
 
 </body>
