@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mariana Desireé | Beauty Studio</title>
+
+<style>
+:root {
+    --cream: #faf6f3;
+    --white: #ffffff;
+    --text: #332b2b;
+    --muted: #827575;
+    --rose: #a98282;
+    --rose-dark: #8f6868;
+    --line: #eadedb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* HEADER */
+
+header {
+    height: 78px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fffaf8;
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+nav a {
+    margin-left: 28px;
+    color: var(--text);
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* HERO */
+
+.hero {
+    padding: 90px 7%;
+    text-align: center;
+    background: linear-gradient(#fffaf8, #f8efec);
+}
+
+.eyebrow {
+    color: var(--rose-dark);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 15px 0;
+    font-size: 58px;
+    font-weight: 400;
+}
+
+.hero p {
+    max-width: 570px;
+    margin: 0 auto 30px;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: var(--rose-dark);
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 70px 7%;
+}
+
+.heading {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.heading h2 {
+    margin: 0 0 9px;
+    font-size: 34px;
+    font-weight: 400;
+}
+
+.heading p {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* SERVICES */
+
+.services {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.service {
+    min-height: 200px;
+    padding: 30px 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--white);
+    text-align: center;
+}
+
+.service .icon {
+    color: var(--rose);
+    font-size: 25px;
+}
+
+.service h3 {
+    margin: 16px 0 9px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.service p {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* BOOKING */
+
+.booking {
+    background: var(--white);
+}
+
+.booking-box {
+    max-width: 760px;
+    margin: auto;
+    padding: 35px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--cream);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: .5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dfd1cd;
+    border-radius: 9px;
+    background: white;
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+.submit {
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    border-radius: 30px;
+    background: var(--rose-dark);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.success {
+    display: none;
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 9px;
+    background: #eee1de;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* AVAILABILITY */
+
+.availability {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: white;
+    text-align: center;
+}
+
+.availability h3 {
+    margin: 0 0 12px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.availability p {
+    margin: 5px;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 35px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        font-size: 47px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 0 5%;
+    }
+
+    nav a {
+        margin-left: 12px;
+    }
+
+    .hero {
+        padding: 65px 6%;
+    }
+
+    h1 {
+        font-size: 41px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .services {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .booking-box {
+        padding: 23px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Mariana Desireé
+        <span>BEAUTY STUDIO</span>
+    </div>
+
+    <nav>
+        <a href="#services">Servicios</a>
+        <a href="#booking">Reservar</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="eyebrow">
+        Beauty • Nails • Hair
+    </div>
+
+    <h1>
+        Mariana Desireé
+    </h1>
+
+    <p>
+        Un espacio elegante y personalizado para consentirte.
+        Reserva tu cita de uñas o cabello de manera sencilla.
+    </p>
+
+    <a class="button" href="#booking">
+        RESERVAR CITA
+    </a>
+
+</section>
+
+
+<section id="services">
+
+    <div class="heading">
+
+        <h2>
+            Servicios
+        </h2>
+
+        <p>
+            Elige el servicio que deseas para tu próxima cita.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+        <div class="service">
+
+            <div class="icon">♡</div>
+
+            <h3>
+                Gel
+            </h3>
+
+            <p>
+                Manicure en gel con un acabado elegante y duradero.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">✦</div>
+
+            <h3>
+                Acrílico
+            </h3>
+
+            <p>
+                Set de acrílico personalizado según tu estilo.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">❀</div>
+
+            <h3>
+                Manicure
+            </h3>
+
+            <p>
+                Cuidado y arreglo de tus uñas naturales.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">✂</div>
+
+            <h3>
+                Corte
+            </h3>
+
+            <p>
+                Corte de cabello personalizado.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">⌁</div>
+
+            <h3>
+                Planchado
+            </h3>
+
+            <p>
+                Cabello pulido y liso para un look elegante.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="booking" id="booking">
+
+    <div class="heading">
+
+        <h2>
+            Book an Appointment
+        </h2>
+
+        <p>
+            Completa la información para solicitar tu cita.
+        </p>
+
+    </div>
+
+
+    <div class="booking-box">
+
+        <form id="appointmentForm">
+
+            <div>
+
+                <label>
+                    NOMBRE
+                </label>
+
+                <input
+                    type="text"
+                    required
+                    placeholder="Tu nombre"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    TELÉFONO
+                </label>
+
+                <input
+                    type="tel"
+                    required
+                    placeholder="(000) 000-0000"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    EMAIL
+                </label>
+
+                <input
+                    type="email"
+                    placeholder="tu@email.com"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    SERVICIO
+                </label>
+
+                <select required>
+
+                    <option value="">
+                        Selecciona un servicio
+                    </option>
+
+                    <option>
+                        Gel
+                    </option>
+
+                    <option>
+                        Acrílico
+                    </option>
+
+                    <option>
+                        Manicure
+                    </option>
+
+                    <option>
+                        Corte de cabello
+                    </option>
+
+                    <option>
+                        Planchado
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    FECHA
+                </label>
+
+                <input
+                    id="date"
+                    type="date"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    HORA
+                </label>
+
+                <select id="time" required>
+
+                    <option value="">
+                        Selecciona una hora
+                    </option>
+
+                    <option value="7:00 PM">
+                        7:00 PM
+                    </option>
+
+                    <option value="7:30 PM">
+                        7:30 PM
+                    </option>
+
+                    <option value="8:00 PM">
+                        8:00 PM
+                    </option>
+
+                    <option value="8:30 PM">
+                        8:30 PM
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="full">
+
+                <label>
+                    NOTA (OPCIONAL)
+                </label>
+
+                <textarea
+                    placeholder="¿Hay algo que deba saber sobre tu cita?"
+                ></textarea>
+
+            </div>
+
+
+            <div class="full">
+
+                <button
+                    class="submit"
+                    type="submit"
+                >
+                    SOLICITAR CITA
+                </button>
+
+                <div
+                    class="success"
+                    id="success"
+                >
+                    ✨ ¡Gracias! Tu solicitud de cita fue recibida.
+                </div>
+
+            </div>
+
+        </form>
+
+
+        <div class="availability">
+
+            <h3>
+                Horario disponible
+            </h3>
+
+            <p>
+                <strong>Lunes</strong> · 7:00 PM – 9:00 PM
+            </p>
+
+            <p>
+                <strong>Miércoles</strong> · 7:00 PM – 9:00 PM
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026 Mariana Desireé Beauty Studio
+
+</footer>
+
+
+<script>
+
+const dateInput = document.getElementById("date");
+
+dateInput.addEventListener("change", function () {
+
+    const selectedDate = new Date(
+        this.value + "T12:00:00"
+    );
+
+    const day = selectedDate.getDay();
+
+    if (day !== 1 && day !== 3) {
+
+        alert(
+            "Por ahora las citas están disponibles únicamente los lunes y miércoles."
+        );
+
+        this.value = "";
+
+    }
+
+});
+
+
+document
+.getElementById("appointmentForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const selectedDate = document.getElementById("date").value;
+
+    if (!selectedDate) {
+        return;
+    }
+
+    const date = new Date(
+        selectedDate + "T12:00:00"
+    );
+
+    const day = date.getDay();
+
+    if (day !== 1 && day !== 3) {
+
+        alert(
+            "Por favor selecciona un lunes o miércoles."
+        );
+
+        return;
+
+    }
+
+    document.getElementById("success").style.display = "block";
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
