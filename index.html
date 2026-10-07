@@ -479,11 +479,11 @@ footer {
     <div class="heading">
 
         <h2>
-            Book an Appointment
+            Reserva tu cita
         </h2>
 
         <p>
-            Completa la información para solicitar tu cita.
+            Elige tu servicio y reserva tu horario disponible.
         </p>
 
     </div>
@@ -491,169 +491,21 @@ footer {
 
     <div class="booking-box">
 
-        <form id="appointmentForm" action="https://formspree.io/f/xoejewqe" method="POST">
+        <div style="text-align: center;">
 
-            <div>
+            <p style="margin-bottom: 25px;">
+                Reserva tu cita de manera sencilla y segura a través de nuestro calendario.
+            </p>
 
-                <label>
-                    NOMBRE
-                </label>
+            <a
+                class="button"
+                href="https://calendar.app.google/K7ezEu3yfEWD1Rz47"
+                target="_blank"
+            >
+                RESERVAR CITA
+            </a>
 
-                <input
-    type="text"
-    name="name"
-    required
-    placeholder="Tu nombre"
->
-
-            </div>
-
-
-            <div>
-
-                <label>
-                    TELÉFONO
-                </label>
-
-                <input
-    type="tel"
-    name="phone"
-    required
-    placeholder="(000) 000-0000"
->
-
-            </div>
-
-
-            <div>
-
-                <label>
-                    EMAIL
-                </label>
-
-                <input
-    type="email"
-    name="email"
-    placeholder="tu@email.com"
->
-
-            </div>
-
-
-            <div>
-
-                <label>
-                    SERVICIO
-                </label>
-
-                <select name="service" required>
-
-                    <option value="">
-                        Selecciona un servicio
-                    </option>
-
-                    <option>
-                        Gel
-                    </option>
-
-                    <option>
-                        Acrílico
-                    </option>
-
-                    <option>
-                        Manicure
-                    </option>
-
-                    <option>
-                        Corte de cabello
-                    </option>
-
-                    <option>
-                        Planchado
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div>
-
-                <label>
-                    FECHA
-                </label>
-
-               <input
-    id="date"
-    name="date"
-    type="date"
-    required
->
-
-            </div>
-
-
-            <div>
-
-                <label>
-                    HORA
-                </label>
-
-                <select id="time" name="time" required>
-
-                    <option value="">
-                        Selecciona una hora
-                    </option>
-
-                    <option value="7:00 PM">
-                        7:00 PM
-                    </option>
-
-                    <option value="7:30 PM">
-                        7:30 PM
-                    </option>
-
-                    <option value="8:00 PM">
-                        8:00 PM
-                    </option>
-
-                    <option value="8:30 PM">
-                        8:30 PM
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="full">
-
-                <label>
-                    NOTA (OPCIONAL)
-                </label>
-
-                <textarea
-    name="note"
-    placeholder="¿Hay algo que deba saber sobre tu cita?"
-></textarea>
-
-            </div>
-
-
-            <div class="full">
-
-                <a class="submit" href="https://calendar.app.google/K7ezEu3yfEWD1Rz47" target="_blank">RESERVAR CITA</a>
-
-                <div
-                    class="success"
-                    id="success"
-                >
-                    ✨ ¡Gracias! Tu solicitud de cita fue recibida.
-                </div>
-
-            </div>
-
-        </form>
+        </div>
 
 
         <div class="availability">
@@ -684,30 +536,7 @@ footer {
 </footer>
 
 
-<script>
 
-const dateInput = document.getElementById("date");
-
-dateInput.addEventListener("change", function () {
-
-    const selectedDate = new Date(
-        this.value + "T12:00:00"
-    );
-
-    const day = selectedDate.getDay();
-
-    if (day !== 1 && day !== 3) {
-
-        alert(
-            "Por ahora las citas están disponibles únicamente los lunes y miércoles."
-        );
-
-        this.value = "";
-
-    }
-
-});
-</script>
 
 </body>
 </html>
